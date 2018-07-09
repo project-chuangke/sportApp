@@ -11,7 +11,7 @@
         <router-link :to="{name:'Contact'}" tag="li">        
           <div>好友</div>
         </router-link>
-        <li>&nbsp;&nbsp;&nbsp;&nbsp;
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <button class="btn">Go!</button>
         </li>
         <router-link :to="{name:'Discover'}" tag="li">        
@@ -35,14 +35,22 @@ export default {
   min-height: 480px;
   width: 100%;
   height: 100%;
+}
+.main {
+  width: 100%;
+  height: 100%;
   position: absolute;
+  background: #2A3440;
+  height:-webkit-calc(100% - 48px); 
+  height:-moz-calc(100% - 48px); 
+  height:calc(100% - 48px); 
 }
 .tabs {
   z-index: 1;
     position: fixed;
     bottom: 0;
     left: 0;
-    background-color: #333;
+    background-color: #232B36;
     box-shadow: 0 2px 4px #000;
     width: 100%;    
     ul {
@@ -75,8 +83,9 @@ export default {
     font-size: 16px;
     outline: none;
     position: absolute;
-    margin-left: -50px;
+    margin-left: -59px;
     margin-top: -45px;
+    font-weight: bold;
   }
   
   

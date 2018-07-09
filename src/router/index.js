@@ -2,6 +2,9 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/pages/index'
 import Video from '@/pages/video/index'
+import Recommend from '@/pages/video/recommend'
+import Channel from '@/pages/video/channel'
+
 import Contact from '@/pages/contact/index'
 import Discover from '@/pages/discover/index'
 import Mine from '@/pages/mine/index'
@@ -19,6 +22,10 @@ export default new Router({
           path: '',
           name: 'Video',
           component: Video,
+          children: [
+            { path: 'recommend', name: 'Recommend', component: Recommend},
+            { path: 'channel', name: 'Channel', component: Channel},
+          ]
         },
         {
           path: 'contact',
