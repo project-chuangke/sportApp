@@ -83,8 +83,9 @@ export default {
     font-size: 16px;
     outline: none;
     position: absolute;
-    margin-left: -59px;
-    margin-top: -45px;
+    margin-left: -56px;
+    background: #aaa;
+    margin-top: -47px;
     font-weight: bold;
   }
   
