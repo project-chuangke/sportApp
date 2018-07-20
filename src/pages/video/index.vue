@@ -54,17 +54,17 @@
         .router-link-active {
             color: #fff;
         }
-    
-    
-     } } }
+    } 
+    } 
+    }
      .body {
         width: 100%;
         height: 100%;
         position: relative;
         top: 48px;
-        height:-webkit-calc(100% - 96px); 
-        height:-moz-calc(100% - 96px); 
-        height:calc(100% - 96px); 
+        height:-webkit-calc(100% - 48px); 
+        height:-moz-calc(100% - 48px); 
+        height:calc(100% - 48px); 
         background: #2A3440;
      }
 </style>
