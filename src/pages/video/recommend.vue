@@ -1,10 +1,10 @@
 <template>
     <div class="box">
-        <div class="swiper-container">
+        <div class="swiper-container" @click="pause()">
             <div class="swiper-wrapper">
                 <div class="swiper-slide" v-for="(d,i) in data" ref="myPlayer">
-                    <video loop="loop" v-bind:autoplay="{true: index==i}">
-                        <source :src="d.src" />{{ i }}
+                    <video class="player" loop="loop">
+                        <source :src="d.src" />
                     </video>
                 </div>
             </div>
@@ -22,29 +22,46 @@
                 index: ""
             }
         },
-        computed: {
-
+        methods: {                    
+            play() {
+                $(".swiper-slide-active").find("video").trigger("play");    
+            },
+            replay() {
+                $(".swiper-slide-active").find("video").trigger("ended");
+            },
+            pause() {
+                if ($(".swiper-slide-active").find("video").hasClass('pause')) {
+                    $(".swiper-slide-active").find("video").trigger("play");
+                    $(".swiper-slide-active").find("video").addClass("play");
+                    $(".swiper-slide-active").find("video").removeClass("pause");                
+                }
+                else if ($(".swiper-slide-active").find("video").hasClass('play')) {
+                    $(".swiper-slide-active").find("video").trigger("pause");
+                    $(".swiper-slide-active").find("video").addClass("pause");
+                    $(".swiper-slide-active").find("video").removeClass("play"); 
+                }             
+            }
         },
         mounted() {
             var mySwiper = new Swiper('.swiper-container', {
                 direction: 'vertical',
                 loop: false,
-                onSlideChangeEnd: function (swiper) {
-                    this.index = swiper.activeIndex;
-                    alert( this.index );
+                onSlideChangeStart: function () {
+                    $(".swiper-slide").find("video").trigger("pause");
                 },
-                onSlideChangeStart: function (swiper) {
-                    this.index = 0;                    
+                onSlideChangeEnd: function (swiper) {
+                    //切换自动播放                    
+                    $(".swiper-slide-active").find("video").trigger("load");
+                    $(".swiper-slide-active").find("video").trigger("play");
+                    $(".swiper-slide-active").find("video").addClass("play");
                 }
-            })
+            })            
         },
-        methods: {
-            handleClickSlide() {
-                alert(10);
-            }
-        }
+        
     }
 </script>
 <style lang="less" type="text/less" scoped>
-    .box{ width: 100%; height: 100%; } .swiper-container { width: 100%; height: 100%; } video { width: 100%; height: 100%; }
+    .box{ width: 100%; height: 100%; } 
+    .swiper-container { width: 100%; height: 100%; } 
+    video { width: 100%; height: 100%; }
 </style>

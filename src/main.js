@@ -7,6 +7,7 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css';
 import Swiper from 'swiper';
 import 'swiper/dist/css/swiper.min.css';
+import $ from 'jquery'
 
 Vue.config.productionTip = false;
 Vue.use(ElementUI);

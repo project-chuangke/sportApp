@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import Test from '@/pages/test'
 import Home from '@/pages/index'
 import Video from '@/pages/video/index'
 import Recommend from '@/pages/video/recommend'
@@ -43,6 +44,11 @@ export default new Router({
           component: Mine,
         }
       ]
+    },
+    {
+      path: '/test',
+      name: 'Test',
+      component: Test,
     }
   ]
 })
