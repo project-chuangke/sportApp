@@ -55,9 +55,10 @@
                     $(".swiper-slide-active").find("video").trigger("play");
                     $(".swiper-slide-active").find("video").addClass("play");
                 }
-            })            
-        },
-        
+            })
+            $(".swiper-slide-active").find("video").trigger("play");
+            $(".swiper-slide-active").find("video").addClass("play");            
+        },        
     }
 </script>
 <style lang="less" type="text/less" scoped>
