@@ -5,23 +5,31 @@
             <div class="con-recommend">
                 <div class="card">
                     <div class="card-top">
-                        <img src="@/assets/img/channel-recommend.jpg" alt="">
-                        <span class="time">{{ msg[0].re.time }}</span>
+                        <div class="item">
+                            <div class="item-img">
+                                <img src="@/assets/img/channel-recommend.jpg" alt="">
+                                <span class="time">{{ msg[0].re.time }}</span>
+                            </div>
+                        </div>
                         <div class="title">
                             <span class="info">{{ msg[0].re.info }}</span>
                         </div>
                     </div>
                     <div class="card-bottom">
                         <div class="item">
-                            <img src="@/assets/img/channel-recommend-user1.jpg" alt="">
-                            <span class="time">{{  msg[0].hot[0].time }}</span>
+                            <div class="item-img">
+                                <img src="@/assets/img/channel-recommend-user1.jpg" alt="">
+                                <span class="time">{{ msg[0].hot[0].time }}</span>
+                            </div>
                             <div class="title">
                                 <span class="info">{{ msg[0].hot[0].info }}</span>
                             </div>
                         </div>
                         <div class="item">
-                            <img src="@/assets/img/channel-recommend-user2.jpg" alt="">
-                            <span class="time">{{  msg[0].hot[1].time }}</span>
+                            <div class="item-img">
+                                <img src="@/assets/img/channel-recommend-user2.jpg" alt="">
+                                <span class="time">{{  msg[0].hot[1].time }}</span>
+                            </div>
                             <div class="title">
                                 <span class="info">{{ msg[0].hot[1].info }}</span>
                             </div>
@@ -41,8 +49,10 @@
                         </div>
                     </div>
                     <div class="title">
-                        <img class="userHeadshot" src="" alt="">
-                        <span class="userName"></span>
+                        <div>
+                            <img class="userHeadshot" src="" alt="">
+                            <span class="userName"></span>
+                        </div>
                     </div>
                 </div>
 
@@ -74,6 +84,11 @@
     overflow-y:scroll;
     overflow-x:auto;
     white-space: nowrap;
+}
+.container {
+    width: 95%;
+    height: 100%;
+    margin: auto;
 }
 .card {
     width: 100%;
@@ -116,24 +131,31 @@
     height: 240px;
     position: relative;
     display: flex;    
+    justify-content: space-between;
 }
 .card .card-bottom .item {
     width: 50%;
     height: 240px;
     position: relative;
     display: flex;
-    justify-content: center;
 }
+.card .card-bottom .item .item-img {
+    position: relative;
+    width: 150px;
+    height: 200px;
+}
+.card .card-bottom .item .item-img:last-child {
+    float: right;
+}
+
 .card .card-bottom .item img {
     width: 150px;
     height: 200px;    
 }
 .card .card-bottom .item .time {
     position: absolute;
-    right: 0;
+    right: 10px;
     bottom: 0;
-    right: 20px;
-    bottom: 45px;
     color: white;
 }
 .card .card-bottom .item .title {
