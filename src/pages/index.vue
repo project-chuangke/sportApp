@@ -5,21 +5,30 @@
      </div>
      <div class="tabs">
        <ul>
-        <router-link :to="{name:'Video'}" tag="li" exact>        
-          <div>视频</div>
-        </router-link>
-        <router-link :to="{name:'Contact'}" tag="li">        
-          <div>好友</div>
-        </router-link>
+         <li>
+           <router-link :to="{name:'Video'}" active-class="active">        
+            视频
+          </router-link>
+        </li>
+        <li>
+          <router-link :to="{name:'Contact'}"  active-class="active">        
+            好友
+          </router-link>
+        </li>
+        
         <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <button class="btn">Go!</button>
         </li>
-        <router-link :to="{name:'Discover'}" tag="li">        
-          <div>发现</div>
-        </router-link>
-        <router-link :to="{name:'Mine'}" tag="li">        
-          <div>我的</div>
-        </router-link>
+        <li>
+          <router-link :to="{name:'Discover'}"  active-class="active">        
+            发现
+          </router-link>
+        </li>
+        <li>
+          <router-link :to="{name:'Mine'}"  active-class="active">        
+            我的
+          </router-link>
+        </li>
         </ul>
      </div>
   </div>
@@ -58,16 +67,19 @@ export default {
       width: 100%;
       height: 48px;      
       & > li {
-        text-align: center;
-        font-size: 16px;
+        text-align: center;        
         display: table-cell;
         padding: 8px 12px;
         cursor: pointer;
         vertical-align: middle;
-        color: #999;
-        &.router-link-active{
-          color: #fff;
+        & > a {
+          font-size: 16px;
+          color: #999;
+          &.active{
+            color: #fff;
+          }
         }
+        
         & > div {
           font-size: 15px;
         }
@@ -89,6 +101,7 @@ export default {
     font-weight: bold;
   }
   
+
   
 </style>
 

@@ -4,7 +4,7 @@
             <el-row :gutter="20">
                 <el-col :span="4">
                     <div class="grid-content">
-                        <router-link to="path">
+                        <router-link to="search">
                             <img class="side" src="@/assets/icon/search.svg">
                         </router-link>
                     </div>
@@ -32,7 +32,7 @@
             </div>
             <div class="second-tab">
                 <img src="@/assets/icon/concern.svg" alt="">
-                <span>动态</span>
+                <span>关注</span>
             </div>
             <div class="second-tab">
                 <img src="@/assets/icon/message.svg" alt="">

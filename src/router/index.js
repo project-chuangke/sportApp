@@ -20,9 +20,10 @@ export default new Router({
       component: Home,
       children: [
         {
-          path: '',
+          path: '/',
           name: 'Video',
           component: Video,
+          redirect: '/recommend',
           children: [
             { path: 'recommend', name: 'Recommend', component: Recommend},
             { path: 'channel', name: 'Channel', component: Channel},
